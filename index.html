@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="src/unit-masks.js"></script>
         <title>Mascaras</title>
-
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
@@ -14,103 +14,54 @@
             <h2>Form de teste</h2>
 
             <div class="input">
-                <input 
-                    type="text"
-                    required
-                />
+                <input type="text" required />
                 <label>Nome</label>
                 <span class="error"></span>
             </div>
 
-
             <div class="input">
-                <input 
-                    type="email" 
-                    required
-                />
+                <input type="email" required />
                 <label>Email</label>
                 <span class="error"></span>
             </div>
 
-
             <div class="input">
-                <input 
-                    isCpfCnpj="yes"
-                    type="text" 
-                    name="cpf_cnpj"
-                    value=""
-                    required
-                />
+                <input isCpfCnpj="yes" type="text" name="cpf_cnpj" value="" required />
                 <label>CPF ou CNPJ</label>
                 <span class="error"></span>
             </div>
 
             <div class="input">
-                <input
-                    required 
-                    cpf="yes"
-                    type="text" 
-                    name="cpf"
-                    value=""
-                    required
-                />
+                <input required cpf="yes" type="text" name="cpf" value="" required />
                 <label>CPF</label>
                 <span class="error"></span>
             </div>
 
             <div class="input">
-                <input
-                    cnpj="yes"
-                    type="text" 
-                    name="cnpj"
-                    value=""
-                    required
-                />
+                <input cnpj="yes" type="text" name="cnpj" value="" required />
                 <label>CNPJ</label>
                 <span class="error"></span>
             </div>
 
             <div class="input">
-                <input
-                    isFormatedBRL="yes"
-                    type="text" 
-                    name="price"
-                    value=""
-                    required
-                />
+                <input isFormatedBRL="yes" type="text" name="price" value="" required />
                 <label>Valor</label>
                 <span class="error"></span>
             </div>
-            
+
             <div class="input">
-                <input
-                    float="yes"
-                    type="text" 
-                    name="float"
-                    value=""
-                    required
-                />
+                <input float="yes" type="text" name="float" value="" required />
                 <label>Float</label>
                 <span class="error"></span>
             </div>
 
             <div class="input">
-                <input
-                    isCep="yes"
-                    type="text" 
-                    name="cep"
-                    value=""
-                    required
-                />
+                <input isCep="yes" type="text" name="cep" value="" required />
                 <label>CEP</label>
                 <span class="error"></span>
             </div>
-        
+
             <button type="submit">Enviar</button>
         </form>
-
-
-
-        <script src="scripts.js"></script>
     </body>
 </html>
