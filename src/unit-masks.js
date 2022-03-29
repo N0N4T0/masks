@@ -4,11 +4,15 @@
  * @returns {string} - entrada alterada
  */
 function cpf(v) {
-    // Coloca um ponto no terceiro caracter
+    // Tamanho maximo
+    if (v.length > 14) {
+        v = v.slice(0, -1);
+    }
+    //
+    v = v.replace(/\D/g, "");
+    // Coloca um ponto a cada tres caracteres
     v = v.replace(/(\d{3})(\d)/, "$1.$2");
-    // Coloca um ponto no sexto caracter
     v = v.replace(/(\d{3})(\d)/, "$1.$2");
-    // Adiciona um traço antes dos três ultimos caracters
     v = v.replace(/(\d{3})(\d)/, "$1-$2");
 
     return v;
@@ -20,6 +24,10 @@ function cpf(v) {
  * @returns {string} - entrada alterada
  */
 function telefone(v) {
+    // Tamanho maximo
+    if (v.length > 14) {
+        v = v.slice(0, -1);
+    }
     //Coloca parênteses em volta dos dois primeiros dígitos
     v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
     //Coloca hífen entre o terceiro e o quarto dígitos
@@ -34,6 +42,14 @@ function telefone(v) {
  * @returns {string} - entrada alterada
  */
 function celular(v) {
+    
+    // Apenas numeros
+    v = v.replace(/\D/g, "");
+
+    if (v.length > 11) {
+        v = v.slice(0, -1);
+    }
+
     //Coloca parênteses em volta dos dois primeiros dígitos
     v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
     //Coloca hífen entre o quarto e o quinto dígitos
@@ -97,20 +113,6 @@ function cartao(v, maxDigits) {
 }
 
 /**
- * Retorna uma string modificada com formatação de numero flutuante
- * @param {string} v - entrada
- * @returns {string} - entrada alterada
- */
-function float(v) {
-    // Conversão de virgulas para pontos
-    v = v.replace(",", ".");
-    // Parsionamento para float
-    v = parseFloat(v).round().toFixed(2);
-
-    return v;
-}
-
-/**
  * Retorna uma string modificada com formatação para moeda brasileira
  * @param {string} v - entrada
  * @returns {string} - entrada alterada
@@ -131,26 +133,20 @@ function brl(v) {
  * @returns {string} - entrada alterada
  */
 function cnpj(v) {
-    //Exemplo: 11.222333444455
+    // Apenas digitos
+    v = v.replace(/\D/g, "");
+
+    //Trata se a quantidade de dígitos
+    if (v.length > 14) {
+        v = v.slice(0, -1);
+    }
+
     v = v.replace(/(\d{2})(\d)/, "$1.$2");
-    //Exemplo:  11.222.333444455
     v = v.replace(/(\d{3})(\d)/, "$1.$2");
-    //Exemplo: ) 11.222.333/444455
     v = v.replace(/(\d{3})(\d)/, "$1/$2");
-    //Exemplo:  11.222.333/4444-55
     v = v.replace(/(\d{4})(\d)/, "$1-$2");
 
     return v;
 }
 
-export{
-    apenasNumeros,
-    brl,
-    cartao,
-    celular,
-    cep,
-    cnpj,
-    cpf,
-    float,
-    telefone
-}
+export { apenasNumeros, brl, cartao, celular, cep, cnpj, cpf, telefone };
